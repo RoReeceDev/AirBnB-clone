@@ -1,8 +1,13 @@
 import React from 'react'
+import HeroPic from '../assets/photo-grid.png'
 
 const Hero = () => {
     return (
-        <h1>This is the Hero component</h1>
+        <section className="hero-sect">
+            <img className="hero-img" src={HeroPic}/>
+            <h1>Online Experiences</h1>
+            <p>Join unique interactive activities led by one-of-a-kind hosts--all without leaving home.</p>
+        </section>
     )
 }
 
