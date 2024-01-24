@@ -47,7 +47,7 @@ section {
 }
 
 .hero-img {
-  max-width: 400px;
+  width:78%;;
   align-self: center;
 }
 
@@ -66,6 +66,8 @@ section {
   flex-direction: column;
   width: 175px;
   font-size: 1.2rem;
+  flex: 0 0 auto;
+  position: relative;
 }
 .card-rating {
   display: flex;
@@ -92,6 +94,24 @@ section {
 .card-title {
   font-size: 1.2rem;
   font-weight: 300;
+}
+
+.card-list{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.card-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  text-transform: uppercase;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
 }
 
 @keyframes logo-spin {

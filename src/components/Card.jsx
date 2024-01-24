@@ -1,24 +1,31 @@
 import React from 'react'
-import Star from '../assets/star.png'
-import Katie from '../assets/katie-zaferes.png'
+import Star from '../../public/images/star.png'
 
-const Card = ({ img, rating, reviewCount, country, title, price }) => {
+
+const Card = ({ coverImg, stats, price, description, title, location, openSpots, key }) => {
+
+    let badgeText 
+    if(openSpots === 0){
+        badgeText = "Sold Out"
+    } else if(location === "Online"){
+        badgeText="Online"
+    }
 
     return (
         <div className='card'>
-            <div>
-                {/* <span>Sold Out</span> */}
-                <img className="card-feature" src={`/src/assets/${img}`} alt="Main Card Image."/>
-            </div>
+            {badgeText && <div className="card-badge">
+                {badgeText}
+            </div>}
+            <img className="card-feature" src={`/images/${coverImg}`} alt="Main Card Image." />
             <div className="card-rating">
-                <img className="card-star"src={Star} alt="Rating Star Icon." />
-                <span>{rating}</span>
-                <span className="gray">({reviewCount}) &bull;</span>
-                <span className="gray">{country}</span>
+                <img className="card-star" src={Star} alt="Rating Star Icon." />
+                <span>{stats.rating}</span>
+                <span className="gray">({stats.reviewCount}) &bull;</span>
+                <span className="gray">{location}</span>
             </div>
             <div className="card-info">
-            <h2 className="card-title">{title}</h2>
-            <p><span className="bold">From ${price}</span> / person</p>
+                <h2 className="card-title">{title}</h2>
+                <p><span className="bold">From ${price}</span> / person</p>
             </div>
         </div>
     )
