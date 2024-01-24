@@ -10,13 +10,7 @@ function App() {
     return (
     <Card 
     key={card.id}
-    title={card.title}
-    description={card.description}
-    price={card.price}
-    coverImg={card.coverImg}
-    stats={card.stats}
-    location={card.location}
-    openSpots={card.openSpots}
+    card={card}
     />
     )
   })
